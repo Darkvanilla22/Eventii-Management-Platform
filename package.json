@@ -5,9 +5,9 @@
   "scripts": {
     "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\"",
     "start-backend": "npm run start --prefix backend",
-    "start-frontend": "npm run serve --prefix frontend",
-    "build": "npm run install-frontend && npm run build-frontend",
-    "build-frontend": "npm run build --prefix frontend",
+    "start-frontend": "cross-env NODE_OPTIONS=--openssl-legacy-provider npm run serve --prefix frontend",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider npm run install-frontend && npm run build-frontend",
+    "build-frontend": "cross-env NODE_OPTIONS=--openssl-legacy-provider npm run build --prefix frontend",
     "install-frontend": "npm install --prefix frontend",
     "dev": "concurrently \"npm run dev-backend\" \"npm run dev-frontend\"",
     "dev-backend": "npm run dev --prefix backend",
